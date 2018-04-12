@@ -7,7 +7,16 @@
 //
 
 import Foundation
+import SWXMLHash
 
-struct Station {}
+struct Station: XMLIndexerDeserializable {
+    let description: String
+    
+    static func deserialize(_ node: XMLIndexer) throws -> Station {
+        return Station(
+            description: ((try? node["StationDesc"].value()) ?? "description not found")
+        )
+    }
+}
 
 typealias StationList = [Station]

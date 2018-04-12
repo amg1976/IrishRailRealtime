@@ -5,13 +5,14 @@ target 'IrishRailRealtime' do
   use_frameworks!
 
   pod 'SwiftLint'
+  pod 'SWXMLHash'
 
   target 'IrishRailRealtimeTests' do
     use_frameworks!
     inherit! :search_paths
 
-    pod 'Nimble', '~> 7.1.0'
-    
+    pod 'Nimble'
+
   end
 
 end

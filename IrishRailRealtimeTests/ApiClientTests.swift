@@ -19,11 +19,14 @@ class ApiClientTests: XCTestCase {
         
         var receivedResult: Result<StationList>?
         
-        apiClient.getStations { result in
-            receivedResult = result
+        waitUntil { done in
+            apiClient.getStations { result in
+                receivedResult = result
+                done()
+            }
         }
         
-        expect(receivedResult).toNotEventually(beNil())
+        expect(receivedResult).toNot(beNil())
         if case let .failed(error) = receivedResult! {
             expect(error).to(matchError(expectedError))
         } else {
@@ -32,19 +35,22 @@ class ApiClientTests: XCTestCase {
 
     }
     
-    func testCanParseStations() {
+    func testCanParseValidStationData() {
 
-        let expectedStationsCount: Int = 0
+        let expectedStationsCount: Int = 3
         
         let apiClient = ApiClient(withNetworkClient: MockNetworkClient())
         
         var receivedResult: Result<StationList>?
 
-        apiClient.getStations { result in
-            receivedResult = result
+        waitUntil { done in
+            apiClient.getStations { result in
+                receivedResult = result
+                done()
+            }
         }
         
-        expect(receivedResult).toNotEventually(beNil())
+        expect(receivedResult).toNot(beNil())
         if case let .succeeded(stationList) = receivedResult! {
             expect(stationList.count).to(equal(expectedStationsCount))
         } else {
@@ -52,7 +58,32 @@ class ApiClientTests: XCTestCase {
         }
         
     }
-    
+
+    func testCanParseInvalidStationData() {
+        
+        let expectedStationsCount: Int = 1
+        
+        let apiClient = ApiClient(withNetworkClient: MockInvalidElementXmlNetworkClient())
+        
+        var receivedResult: Result<StationList>?
+        
+        waitUntil { done in
+            apiClient.getStations { result in
+                receivedResult = result
+                done()
+            }
+        }
+        
+        expect(receivedResult).toNot(beNil())
+        if case let .succeeded(stationList) = receivedResult! {
+            expect(stationList.count).to(equal(expectedStationsCount))
+            expect(stationList.first!.description).to(equal("description not found"))
+        } else {
+            fail()
+        }
+        
+    }
+
 }
 
 class MockErrorNetworkClient: NetworkClientRepresentable {
@@ -69,7 +100,8 @@ class MockNetworkClient: NetworkClientRepresentable {
     
     func request(url: String, method: HttpMethod, onCompletion: @escaping NetworkRequestCompletionBlock) {
         DispatchQueue.global(qos: .background).async {
-            onCompletion("""
+            let data = """
+                <?xml version="1.0" encoding="utf-8"?>
                 <ArrayOfObjStation
                     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                     xmlns:xsd="http://www.w3.org/2001/XMLSchema"
@@ -98,9 +130,30 @@ class MockNetworkClient: NetworkClientRepresentable {
                 <StationCode>LURGN</StationCode>
                 <StationId>241</StationId>
                 </objStation>
-                <objStation>
                 </ArrayOfObjStation>
-                """.data(using: .utf8), nil)
+                """.data(using: .utf8)
+            onCompletion(data, nil)
+        }
+    }
+    
+}
+
+class MockInvalidElementXmlNetworkClient: NetworkClientRepresentable {
+    
+    func request(url: String, method: HttpMethod, onCompletion: @escaping NetworkRequestCompletionBlock) {
+        DispatchQueue.global(qos: .background).async {
+            let data = """
+                <?xml version="1.0" encoding="utf-8"?>
+                <ArrayOfObjStation
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                    xmlns="http://api.irishrail.ie/realtime/">
+                <objStation>
+                <StationDesc1>Belfast Central</StationDesc1>
+                </objStation>
+                </ArrayOfObjStation>
+                """.data(using: .utf8)
+            onCompletion(data, nil)
         }
     }
     

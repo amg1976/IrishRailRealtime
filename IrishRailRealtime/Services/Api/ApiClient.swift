@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SWXMLHash
 
 enum Result<Element> {
     case succeeded(Element)
@@ -17,7 +18,7 @@ struct ApiClient {
     
     private let networkClient: NetworkClientRepresentable
     
-    init(withNetworkClient networkClient: NetworkClientRepresentable) {
+    init(withNetworkClient networkClient: NetworkClientRepresentable = SimpleNetworkClient()) {
         self.networkClient = networkClient
     }
     
@@ -25,14 +26,26 @@ struct ApiClient {
         
         let url: String = "http://api.irishrail.ie/realtime/realtime.asmx/getAllStationsXML"
         
-        networkClient.request(url: url, method: .get) { (_, error) in
+        networkClient.request(url: url, method: .get) { (data, error) in
             
             guard error == nil else {
                 onCompletion(Result.failed(error!))
                 return
             }
             
-            onCompletion(Result.succeeded(StationList()))
+            guard let data = data else {
+                onCompletion(Result.succeeded(StationList()))
+                return
+            }
+            
+            let xmlObject = SWXMLHash.parse(data)
+            
+            do {
+                let stationList: StationList = try xmlObject["ArrayOfObjStation"]["objStation"].value()
+                onCompletion(Result.succeeded(stationList))
+            } catch let parseError {
+                onCompletion(Result.failed(parseError))
+            }
             
         }
         
