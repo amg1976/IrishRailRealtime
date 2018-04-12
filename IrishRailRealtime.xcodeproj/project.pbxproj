@@ -77,12 +77,9 @@
 		20E3574B207FDEDF0038AE02 /* IrishRailRealtime */ = {
 			isa = PBXGroup;
 			children = (
-				20E3574C207FDEDF0038AE02 /* AppDelegate.swift */,
-				20E3574E207FDEDF0038AE02 /* ViewController.swift */,
-				20E35750207FDEDF0038AE02 /* Main.storyboard */,
-				20E35753207FDEE00038AE02 /* Assets.xcassets */,
-				20E35755207FDEE00038AE02 /* LaunchScreen.storyboard */,
-				20E35758207FDEE00038AE02 /* Info.plist */,
+				20E3576F207FE0110038AE02 /* Assets */,
+				20E3576D207FDFD60038AE02 /* Features */,
+				20E3576C207FDF9F0038AE02 /* Supporting files */,
 			);
 			path = IrishRailRealtime;
 			sourceTree = "<group>";
@@ -94,6 +91,49 @@
 				20E35763207FDEE00038AE02 /* Info.plist */,
 			);
 			path = IrishRailRealtimeTests;
+			sourceTree = "<group>";
+		};
+		20E3576C207FDF9F0038AE02 /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				20E35758207FDEE00038AE02 /* Info.plist */,
+			);
+			path = "Supporting files";
+			sourceTree = "<group>";
+		};
+		20E3576D207FDFD60038AE02 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				20E3576E207FE0040038AE02 /* Main */,
+				20E35770207FE0870038AE02 /* StationList */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		20E3576E207FE0040038AE02 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				20E3574C207FDEDF0038AE02 /* AppDelegate.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		20E3576F207FE0110038AE02 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				20E35750207FDEDF0038AE02 /* Main.storyboard */,
+				20E35753207FDEE00038AE02 /* Assets.xcassets */,
+				20E35755207FDEE00038AE02 /* LaunchScreen.storyboard */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		20E35770207FE0870038AE02 /* StationList */ = {
+			isa = PBXGroup;
+			children = (
+				20E3574E207FDEDF0038AE02 /* ViewController.swift */,
+			);
+			path = StationList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
