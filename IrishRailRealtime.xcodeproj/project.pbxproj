@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		06E785A4CA9195A9010BCCD3 /* Pods_IrishRailRealtime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6130CF1CF9A5457A9A2315F9 /* Pods_IrishRailRealtime.framework */; };
 		093541303392F171004A49D2 /* Pods_IrishRailRealtimeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA1E34D2939064B5478DA267 /* Pods_IrishRailRealtimeTests.framework */; };
+		20A9B95A2080072400A95167 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A9B9592080072400A95167 /* ApiClient.swift */; };
+		20A9B95B2080072400A95167 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A9B9592080072400A95167 /* ApiClient.swift */; };
+		20A9B95F2080083C00A95167 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A9B95E2080083C00A95167 /* Station.swift */; };
+		20A9B9602080083C00A95167 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A9B95E2080083C00A95167 /* Station.swift */; };
+		20A9B9622080096D00A95167 /* ApiClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A9B9612080096D00A95167 /* ApiClientTests.swift */; };
 		20E3574D207FDEDF0038AE02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E3574C207FDEDF0038AE02 /* AppDelegate.swift */; };
 		20E3574F207FDEDF0038AE02 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E3574E207FDEDF0038AE02 /* ViewController.swift */; };
 		20E35752207FDEDF0038AE02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20E35750207FDEDF0038AE02 /* Main.storyboard */; };
@@ -30,6 +35,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		20A9B9592080072400A95167 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
+		20A9B95E2080083C00A95167 /* Station.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
+		20A9B9612080096D00A95167 /* ApiClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClientTests.swift; sourceTree = "<group>"; };
 		20E35749207FDEDF0038AE02 /* IrishRailRealtime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IrishRailRealtime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20E3574C207FDEDF0038AE02 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20E3574E207FDEDF0038AE02 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +88,22 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		20A9B9582080071100A95167 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				20A9B9592080072400A95167 /* ApiClient.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		20A9B95C2080082600A95167 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				20A9B95E2080083C00A95167 /* Station.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		20E35740207FDEDF0038AE02 = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				20E3576D207FDFD60038AE02 /* Features */,
+				20A9B95C2080082600A95167 /* Models */,
 				20E35771207FE10B0038AE02 /* Services */,
 				20E3576F207FE0110038AE02 /* Assets */,
 				20E3576C207FDF9F0038AE02 /* Supporting files */,
@@ -114,8 +139,9 @@
 		20E35760207FDEE00038AE02 /* IrishRailRealtimeTests */ = {
 			isa = PBXGroup;
 			children = (
-				20E35761207FDEE00038AE02 /* NetworkClientTests.swift */,
 				20E35763207FDEE00038AE02 /* Info.plist */,
+				20A9B9612080096D00A95167 /* ApiClientTests.swift */,
+				20E35761207FDEE00038AE02 /* NetworkClientTests.swift */,
 			);
 			path = IrishRailRealtimeTests;
 			sourceTree = "<group>";
@@ -166,6 +192,7 @@
 		20E35771207FE10B0038AE02 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				20A9B9582080071100A95167 /* Api */,
 				20E35772207FE1130038AE02 /* Network */,
 			);
 			path = Services;
@@ -197,6 +224,7 @@
 			buildPhases = (
 				51762CD4A88D3B1F3CBF4A01 /* [CP] Check Pods Manifest.lock */,
 				20E35745207FDEDF0038AE02 /* Sources */,
+				20A9B96320800B6B00A95167 /* Swift Lint */,
 				20E35746207FDEDF0038AE02 /* Frameworks */,
 				20E35747207FDEDF0038AE02 /* Resources */,
 			);
@@ -215,6 +243,7 @@
 			buildPhases = (
 				9FD43840BD26504D195E0FD0 /* [CP] Check Pods Manifest.lock */,
 				20E35759207FDEE00038AE02 /* Sources */,
+				20A9B96420800B8A00A95167 /* Swift Lint */,
 				20E3575A207FDEE00038AE02 /* Frameworks */,
 				20E3575B207FDEE00038AE02 /* Resources */,
 				F3EDA1FB852E2422C9970BAF /* [CP] Embed Pods Frameworks */,
@@ -288,6 +317,34 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		20A9B96320800B6B00A95167 /* Swift Lint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Swift Lint";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"";
+		};
+		20A9B96420800B8A00A95167 /* Swift Lint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Swift Lint";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"";
+		};
 		51762CD4A88D3B1F3CBF4A01 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -349,9 +406,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20A9B95F2080083C00A95167 /* Station.swift in Sources */,
 				20E3574F207FDEDF0038AE02 /* ViewController.swift in Sources */,
 				20E3574D207FDEDF0038AE02 /* AppDelegate.swift in Sources */,
 				20E35774207FE12F0038AE02 /* NetworkClient.swift in Sources */,
+				20A9B95A2080072400A95167 /* ApiClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,8 +418,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20A9B9622080096D00A95167 /* ApiClientTests.swift in Sources */,
 				20E35762207FDEE00038AE02 /* NetworkClientTests.swift in Sources */,
+				20A9B9602080083C00A95167 /* Station.swift in Sources */,
 				20E35775207FE12F0038AE02 /* NetworkClient.swift in Sources */,
+				20A9B95B2080072400A95167 /* ApiClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

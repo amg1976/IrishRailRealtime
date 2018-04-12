@@ -13,11 +13,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication,
+                     didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        SimpleNetworkClient().request(url: "https://api.irishrail.ie/realtime/realtime.asmx/invalid") { (data, error) in
-            print("ERROR: \(String(describing: error))")
-        }
         return true
     }
 

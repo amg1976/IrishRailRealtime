@@ -40,25 +40,26 @@ class SimpleNetworkClient: NSObject, NetworkClientRepresentable {
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = method.rawValue
         
-        let task = URLSession(configuration: URLSessionConfiguration.default).dataTask(with: urlRequest) { (data, response, error) in
-            
-            guard error == nil else {
-                onCompletion(nil, NetworkClientError.responseError(error!))
-                return
-            }
-            
-            guard let response = response as? HTTPURLResponse else {
-                onCompletion(nil, NetworkClientError.invalidResponseObject)
-                return
-            }
-            
-            guard response.statusCode == 200 else {
-                onCompletion(nil, NetworkClientError.invalidStatusCode(response.statusCode))
-                return
-            }
-            
-            onCompletion(data, nil)
-            
+        let task = URLSession(configuration: URLSessionConfiguration.default)
+            .dataTask(with: urlRequest) { (data, response, error) in
+                
+                guard error == nil else {
+                    onCompletion(nil, NetworkClientError.responseError(error!))
+                    return
+                }
+                
+                guard let response = response as? HTTPURLResponse else {
+                    onCompletion(nil, NetworkClientError.invalidResponseObject)
+                    return
+                }
+                
+                guard response.statusCode == 200 else {
+                    onCompletion(nil, NetworkClientError.invalidStatusCode(response.statusCode))
+                    return
+                }
+                
+                onCompletion(data, nil)
+                
         }
         task.resume()
         

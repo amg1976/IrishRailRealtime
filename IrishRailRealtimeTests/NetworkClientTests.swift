@@ -32,6 +32,8 @@ class NetworkClientTests: XCTestCase {
     
     func testCompletionBlockCalledWithInvalidRequestError() {
 
+        let expectedStatusCode: Int = 500
+        
         let invalidEndpoint: String = "https://api.irishrail.ie/realtime/realtime.asmx/invalid"
 
         var receivedError: Error?
@@ -44,12 +46,16 @@ class NetworkClientTests: XCTestCase {
         }
         
         expect(receivedError).toNotEventually(beNil())
-        expect({
-            if case NetworkClientError.invalidStatusCode(_) = (receivedError as! NetworkClientError) {
-                return .succeeded
-            }
-            return .failed(reason: "Unexpected error case")
-        }).to(succeed())
+        guard let receivedNetworkError = receivedError as? NetworkClientError else {
+            fail()
+            return
+        }
+        
+        if case let .invalidStatusCode(statusCode) = receivedNetworkError {
+            expect(statusCode).to(equal(expectedStatusCode))
+        } else {
+            fail()
+        }
         
     }
     
