@@ -53,6 +53,8 @@ class ApiClientTests: XCTestCase {
         expect(receivedResult).toNot(beNil())
         if case let .succeeded(stationList) = receivedResult! {
             expect(stationList.count).to(equal(expectedStationsCount))
+            expect(stationList.first!.description).to(equal("Belfast Central"))
+            expect(stationList.last!.description).to(equal("Lurgan"))
         } else {
             fail()
         }
@@ -77,7 +79,7 @@ class ApiClientTests: XCTestCase {
         expect(receivedResult).toNot(beNil())
         if case let .succeeded(stationList) = receivedResult! {
             expect(stationList.count).to(equal(expectedStationsCount))
-            expect(stationList.first!.description).to(equal("description not found"))
+            expect(stationList.first!.description).to(equal("Unable to parse StationDesc"))
         } else {
             fail()
         }
