@@ -1,0 +1,468 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		20E3574D207FDEDF0038AE02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E3574C207FDEDF0038AE02 /* AppDelegate.swift */; };
+		20E3574F207FDEDF0038AE02 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E3574E207FDEDF0038AE02 /* ViewController.swift */; };
+		20E35752207FDEDF0038AE02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20E35750207FDEDF0038AE02 /* Main.storyboard */; };
+		20E35754207FDEE00038AE02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20E35753207FDEE00038AE02 /* Assets.xcassets */; };
+		20E35757207FDEE00038AE02 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20E35755207FDEE00038AE02 /* LaunchScreen.storyboard */; };
+		20E35762207FDEE00038AE02 /* IrishRailRealtimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E35761207FDEE00038AE02 /* IrishRailRealtimeTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		20E3575E207FDEE00038AE02 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 20E35741207FDEDF0038AE02 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 20E35748207FDEDF0038AE02;
+			remoteInfo = IrishRailRealtime;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		20E35749207FDEDF0038AE02 /* IrishRailRealtime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IrishRailRealtime.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		20E3574C207FDEDF0038AE02 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		20E3574E207FDEDF0038AE02 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		20E35751207FDEDF0038AE02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		20E35753207FDEE00038AE02 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		20E35756207FDEE00038AE02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		20E35758207FDEE00038AE02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		20E3575D207FDEE00038AE02 /* IrishRailRealtimeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IrishRailRealtimeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		20E35761207FDEE00038AE02 /* IrishRailRealtimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IrishRailRealtimeTests.swift; sourceTree = "<group>"; };
+		20E35763207FDEE00038AE02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		20E35746207FDEDF0038AE02 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		20E3575A207FDEE00038AE02 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		20E35740207FDEDF0038AE02 = {
+			isa = PBXGroup;
+			children = (
+				20E3574B207FDEDF0038AE02 /* IrishRailRealtime */,
+				20E35760207FDEE00038AE02 /* IrishRailRealtimeTests */,
+				20E3574A207FDEDF0038AE02 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		20E3574A207FDEDF0038AE02 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				20E35749207FDEDF0038AE02 /* IrishRailRealtime.app */,
+				20E3575D207FDEE00038AE02 /* IrishRailRealtimeTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		20E3574B207FDEDF0038AE02 /* IrishRailRealtime */ = {
+			isa = PBXGroup;
+			children = (
+				20E3574C207FDEDF0038AE02 /* AppDelegate.swift */,
+				20E3574E207FDEDF0038AE02 /* ViewController.swift */,
+				20E35750207FDEDF0038AE02 /* Main.storyboard */,
+				20E35753207FDEE00038AE02 /* Assets.xcassets */,
+				20E35755207FDEE00038AE02 /* LaunchScreen.storyboard */,
+				20E35758207FDEE00038AE02 /* Info.plist */,
+			);
+			path = IrishRailRealtime;
+			sourceTree = "<group>";
+		};
+		20E35760207FDEE00038AE02 /* IrishRailRealtimeTests */ = {
+			isa = PBXGroup;
+			children = (
+				20E35761207FDEE00038AE02 /* IrishRailRealtimeTests.swift */,
+				20E35763207FDEE00038AE02 /* Info.plist */,
+			);
+			path = IrishRailRealtimeTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		20E35748207FDEDF0038AE02 /* IrishRailRealtime */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 20E35766207FDEE00038AE02 /* Build configuration list for PBXNativeTarget "IrishRailRealtime" */;
+			buildPhases = (
+				20E35745207FDEDF0038AE02 /* Sources */,
+				20E35746207FDEDF0038AE02 /* Frameworks */,
+				20E35747207FDEDF0038AE02 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IrishRailRealtime;
+			productName = IrishRailRealtime;
+			productReference = 20E35749207FDEDF0038AE02 /* IrishRailRealtime.app */;
+			productType = "com.apple.product-type.application";
+		};
+		20E3575C207FDEE00038AE02 /* IrishRailRealtimeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 20E35769207FDEE00038AE02 /* Build configuration list for PBXNativeTarget "IrishRailRealtimeTests" */;
+			buildPhases = (
+				20E35759207FDEE00038AE02 /* Sources */,
+				20E3575A207FDEE00038AE02 /* Frameworks */,
+				20E3575B207FDEE00038AE02 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				20E3575F207FDEE00038AE02 /* PBXTargetDependency */,
+			);
+			name = IrishRailRealtimeTests;
+			productName = IrishRailRealtimeTests;
+			productReference = 20E3575D207FDEE00038AE02 /* IrishRailRealtimeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		20E35741207FDEDF0038AE02 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = "Adriano Goncalves";
+				TargetAttributes = {
+					20E35748207FDEDF0038AE02 = {
+						CreatedOnToolsVersion = 9.3;
+					};
+					20E3575C207FDEE00038AE02 = {
+						CreatedOnToolsVersion = 9.3;
+						TestTargetID = 20E35748207FDEDF0038AE02;
+					};
+				};
+			};
+			buildConfigurationList = 20E35744207FDEDF0038AE02 /* Build configuration list for PBXProject "IrishRailRealtime" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 20E35740207FDEDF0038AE02;
+			productRefGroup = 20E3574A207FDEDF0038AE02 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				20E35748207FDEDF0038AE02 /* IrishRailRealtime */,
+				20E3575C207FDEE00038AE02 /* IrishRailRealtimeTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		20E35747207FDEDF0038AE02 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20E35757207FDEE00038AE02 /* LaunchScreen.storyboard in Resources */,
+				20E35754207FDEE00038AE02 /* Assets.xcassets in Resources */,
+				20E35752207FDEDF0038AE02 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		20E3575B207FDEE00038AE02 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		20E35745207FDEDF0038AE02 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20E3574F207FDEDF0038AE02 /* ViewController.swift in Sources */,
+				20E3574D207FDEDF0038AE02 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		20E35759207FDEE00038AE02 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20E35762207FDEE00038AE02 /* IrishRailRealtimeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		20E3575F207FDEE00038AE02 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 20E35748207FDEDF0038AE02 /* IrishRailRealtime */;
+			targetProxy = 20E3575E207FDEE00038AE02 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		20E35750207FDEDF0038AE02 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				20E35751207FDEDF0038AE02 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		20E35755207FDEE00038AE02 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				20E35756207FDEE00038AE02 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		20E35764207FDEE00038AE02 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		20E35765207FDEE00038AE02 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		20E35767207FDEE00038AE02 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M65H29N762;
+				INFOPLIST_FILE = IrishRailRealtime/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.amg.IrishRailRealtime;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		20E35768207FDEE00038AE02 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M65H29N762;
+				INFOPLIST_FILE = IrishRailRealtime/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.amg.IrishRailRealtime;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		20E3576A207FDEE00038AE02 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M65H29N762;
+				INFOPLIST_FILE = IrishRailRealtimeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.amg.IrishRailRealtimeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IrishRailRealtime.app/IrishRailRealtime";
+			};
+			name = Debug;
+		};
+		20E3576B207FDEE00038AE02 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M65H29N762;
+				INFOPLIST_FILE = IrishRailRealtimeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.amg.IrishRailRealtimeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IrishRailRealtime.app/IrishRailRealtime";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		20E35744207FDEDF0038AE02 /* Build configuration list for PBXProject "IrishRailRealtime" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				20E35764207FDEE00038AE02 /* Debug */,
+				20E35765207FDEE00038AE02 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		20E35766207FDEE00038AE02 /* Build configuration list for PBXNativeTarget "IrishRailRealtime" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				20E35767207FDEE00038AE02 /* Debug */,
+				20E35768207FDEE00038AE02 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		20E35769207FDEE00038AE02 /* Build configuration list for PBXNativeTarget "IrishRailRealtimeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				20E3576A207FDEE00038AE02 /* Debug */,
+				20E3576B207FDEE00038AE02 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 20E35741207FDEDF0038AE02 /* Project object */;
+}
