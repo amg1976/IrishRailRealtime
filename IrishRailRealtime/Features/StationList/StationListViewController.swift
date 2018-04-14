@@ -8,8 +8,10 @@
 
 import UIKit
 
+typealias StationLink = (code: String, name: String)
+
 protocol StationListViewControllerFlowDelegate: class {
-    func didSelectStation(_ stationCode: String)
+    func didSelectStation(_ station: StationLink)
 }
 
 class StationListViewController: ListViewController<StationListViewModel, StationListCell> {
@@ -49,8 +51,8 @@ class StationListViewController: ListViewController<StationListViewModel, Statio
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let station = try? listViewModel.viewModel(atIndexPath: indexPath) as? StationViewModel {
-            flowDelegate?.didSelectStation(station!.code)
+            flowDelegate?.didSelectStation(StationLink(station!.code, station!.name))
         }
     }
-
+    
 }

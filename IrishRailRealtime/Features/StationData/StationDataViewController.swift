@@ -12,14 +12,16 @@ protocol StationDataViewControllerFlowDelegate: class { }
 
 class StationDataViewController: ListViewController<StationDataListViewModel, StationDataCell> {
    
-    var stationCode: String!
+    var station: StationLink!
     weak var flowDelegate: StationDataViewControllerFlowDelegate?
     
     override func viewDidLoad() {
-        guard stationCode != nil else {
+        guard station != nil else {
             fatalError("Missing dependencies")
         }
         super.viewDidLoad()
+        
+        self.navigationItem.title = station.name
     }
     
     static var instance: StationDataViewController {
@@ -33,7 +35,7 @@ class StationDataViewController: ListViewController<StationDataListViewModel, St
     override func reload() {
         guard let stationDataListViewModel = listViewModel as? StationDataListViewModel else { return }
         
-        stationDataListViewModel.loadStationData(withCode: stationCode) { result in
+        stationDataListViewModel.loadStationData(withCode: station.code) { result in
             
             switch result {
                 

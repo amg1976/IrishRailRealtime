@@ -59,11 +59,11 @@ private extension PrivateApi {
         navigationController.addChildViewController(stationListViewController)
     }
     
-    func showStationDataViewController(forStationCode stationCode: String) {
+    func showStationDataViewController(forStation station: StationLink) {
         let stationDataViewController = StationDataViewController.instance
         stationDataViewController.flowDelegate = self
         stationDataViewController.services = services
-        stationDataViewController.stationCode = stationCode
+        stationDataViewController.station = station
         
         navigationController.pushViewController(stationDataViewController, animated: true)
     }
@@ -72,8 +72,8 @@ private extension PrivateApi {
 
 extension AppCoordinator: StationListViewControllerFlowDelegate {
     
-    func didSelectStation(_ stationCode: String) {
-        showStationDataViewController(forStationCode: stationCode)
+    func didSelectStation(_ station: StationLink) {
+        showStationDataViewController(forStation: station)
     }
     
 }

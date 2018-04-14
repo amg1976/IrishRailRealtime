@@ -47,6 +47,7 @@ class ListViewController<ViewModel: ListViewModelRepresentable,
         reload()
     }
     
+    @objc
     func reload() {
         fatalError("Should be overrided by implementing class")
     }
@@ -78,7 +79,7 @@ class ListViewController<ViewModel: ListViewModelRepresentable,
         return cell
         
     }
-
+    
     // MARK: - Table Delegate
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
