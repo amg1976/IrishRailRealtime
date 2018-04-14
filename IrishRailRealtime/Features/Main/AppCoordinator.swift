@@ -69,7 +69,7 @@ class AppCoordinator {
 
 extension AppCoordinator: StationListViewControllerFlowDelegate {
     
-    func didSelectStation() {
+    func didSelectStation(_ stationCode: String) {
         fatalError()
     }
     

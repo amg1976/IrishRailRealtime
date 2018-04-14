@@ -9,7 +9,7 @@
 import UIKit
 
 protocol StationListViewControllerFlowDelegate: class {
-    func didSelectStation()
+    func didSelectStation(_ stationCode: String)
 }
 
 class StationListViewController: UIViewController, FlowController {
@@ -47,7 +47,7 @@ class StationListViewController: UIViewController, FlowController {
     
 }
 
-extension StationListViewController: UITableViewDataSource {
+extension StationListViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return stationListViewModel.count
@@ -59,12 +59,18 @@ extension StationListViewController: UITableViewDataSource {
             fatalError("Configuration error")
         }
         
-        if let model = try? stationListViewModel.viewModel(atIndexPath: indexPath) {
-            cell.configure(withStation: model)
+        if let station = try? stationListViewModel.viewModel(atIndexPath: indexPath) {
+            cell.configure(withStation: station)
         }
         
         return cell
         
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let station = try? stationListViewModel.viewModel(atIndexPath: indexPath) {
+            flowDelegate?.didSelectStation(station.code)
+        }
     }
     
 }

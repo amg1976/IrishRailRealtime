@@ -10,10 +10,12 @@ import Foundation
 
 struct StationViewModel {
     
-    let stationName: String
+    let name: String
+    let code: String
     
     init(withModel station: Station) {
-        self.stationName = "\(station.description) (\(station.code))"
+        self.code = station.code
+        self.name = "\(station.description) (\(station.code))"
     }
     
 }
@@ -43,7 +45,7 @@ class StationListViewModel {
             case .succeeded(let stationsList):
                 self?.stations = stationsList
                     .map { StationViewModel(withModel: $0) }
-                    .sorted(by: { $0.stationName.compare($1.stationName) == .orderedAscending  })
+                    .sorted(by: { $0.name.compare($1.name) == .orderedAscending  })
                 completion(.succeeded(stationsList.count))
                 
             case .failed(let error):

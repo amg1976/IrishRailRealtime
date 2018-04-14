@@ -13,6 +13,6 @@ class StationListCell: UITableViewCell {
     static let reuseIdentifier: String = String(describing: self)
     
     func configure(withStation station: StationViewModel) {
-        self.textLabel?.text = station.stationName
+        self.textLabel?.text = station.name
     }
 }

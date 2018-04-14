@@ -15,6 +15,13 @@
 		207E2230208224B50043F659 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E222E208224B50043F659 /* Result.swift */; };
 		207E22322082482D0043F659 /* StationListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E22312082482D0043F659 /* StationListCell.swift */; };
 		207E22332082482D0043F659 /* StationListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E22312082482D0043F659 /* StationListCell.swift */; };
+		207E223920824D1D0043F659 /* StationDataListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E223820824D1D0043F659 /* StationDataListViewModel.swift */; };
+		207E223A20824D1D0043F659 /* StationDataListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E223820824D1D0043F659 /* StationDataListViewModel.swift */; };
+		207E223C20824E380043F659 /* StationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E223B20824E380043F659 /* StationData.swift */; };
+		207E223D20824E380043F659 /* StationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E223B20824E380043F659 /* StationData.swift */; };
+		207E223F208250DB0043F659 /* StationDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E223E208250DA0043F659 /* StationDataViewController.swift */; };
+		207E2240208250DB0043F659 /* StationDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E223E208250DA0043F659 /* StationDataViewController.swift */; };
+		207E2241208253400043F659 /* StationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E3574E207FDEDF0038AE02 /* StationListViewController.swift */; };
 		208C95FC20821DB1003EE1BE /* StationListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208C95FB20821DB1003EE1BE /* StationListViewModel.swift */; };
 		208C95FD20821DB1003EE1BE /* StationListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208C95FB20821DB1003EE1BE /* StationListViewModel.swift */; };
 		20A9B95A2080072400A95167 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A9B9592080072400A95167 /* ApiClient.swift */; };
@@ -46,6 +53,9 @@
 		207E222A20821F000043F659 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		207E222E208224B50043F659 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		207E22312082482D0043F659 /* StationListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationListCell.swift; sourceTree = "<group>"; };
+		207E223820824D1D0043F659 /* StationDataListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationDataListViewModel.swift; sourceTree = "<group>"; };
+		207E223B20824E380043F659 /* StationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationData.swift; sourceTree = "<group>"; };
+		207E223E208250DA0043F659 /* StationDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationDataViewController.swift; sourceTree = "<group>"; };
 		208C95FB20821DB1003EE1BE /* StationListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationListViewModel.swift; sourceTree = "<group>"; };
 		20A9B9592080072400A95167 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		20A9B95E2080083C00A95167 /* Station.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
@@ -108,6 +118,15 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		207E223420824CB70043F659 /* StationDetail */ = {
+			isa = PBXGroup;
+			children = (
+				207E223E208250DA0043F659 /* StationDataViewController.swift */,
+				207E223820824D1D0043F659 /* StationDataListViewModel.swift */,
+			);
+			path = StationDetail;
+			sourceTree = "<group>";
+		};
 		20A9B9582080071100A95167 /* Api */ = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				20A9B95E2080083C00A95167 /* Station.swift */,
+				207E223B20824E380043F659 /* StationData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -180,6 +200,7 @@
 			children = (
 				20E3576E207FE0040038AE02 /* Main */,
 				20E35770207FE0870038AE02 /* StationList */,
+				207E223420824CB70043F659 /* StationDetail */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -196,9 +217,9 @@
 		20E3576F207FE0110038AE02 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				20E35750207FDEDF0038AE02 /* Main.storyboard */,
 				20E35753207FDEE00038AE02 /* Assets.xcassets */,
 				20E35755207FDEE00038AE02 /* LaunchScreen.storyboard */,
+				20E35750207FDEDF0038AE02 /* Main.storyboard */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -449,13 +470,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				207E223F208250DB0043F659 /* StationDataViewController.swift in Sources */,
 				20A9B95F2080083C00A95167 /* Station.swift in Sources */,
 				20E3574F207FDEDF0038AE02 /* StationListViewController.swift in Sources */,
 				20E3574D207FDEDF0038AE02 /* AppDelegate.swift in Sources */,
 				208C95FC20821DB1003EE1BE /* StationListViewModel.swift in Sources */,
+				207E223C20824E380043F659 /* StationData.swift in Sources */,
 				20E35774207FE12F0038AE02 /* NetworkClient.swift in Sources */,
 				20A9B95A2080072400A95167 /* ApiClient.swift in Sources */,
 				207E222F208224B50043F659 /* Result.swift in Sources */,
+				207E223920824D1D0043F659 /* StationDataListViewModel.swift in Sources */,
 				207E22322082482D0043F659 /* StationListCell.swift in Sources */,
 				207E222B20821F000043F659 /* AppCoordinator.swift in Sources */,
 			);
@@ -465,13 +489,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				207E2240208250DB0043F659 /* StationDataViewController.swift in Sources */,
 				20A9B9622080096D00A95167 /* ApiClientTests.swift in Sources */,
 				20E35762207FDEE00038AE02 /* NetworkClientTests.swift in Sources */,
 				20A9B9602080083C00A95167 /* Station.swift in Sources */,
 				208C95FD20821DB1003EE1BE /* StationListViewModel.swift in Sources */,
+				207E223D20824E380043F659 /* StationData.swift in Sources */,
 				20E35775207FE12F0038AE02 /* NetworkClient.swift in Sources */,
 				20A9B95B2080072400A95167 /* ApiClient.swift in Sources */,
 				207E2230208224B50043F659 /* Result.swift in Sources */,
+				207E2241208253400043F659 /* StationListViewController.swift in Sources */,
+				207E223A20824D1D0043F659 /* StationDataListViewModel.swift in Sources */,
 				207E22332082482D0043F659 /* StationListCell.swift in Sources */,
 				207E222C20821F000043F659 /* AppCoordinator.swift in Sources */,
 			);
