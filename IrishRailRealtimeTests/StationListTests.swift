@@ -9,7 +9,7 @@
 import XCTest
 import Nimble
 
-class ApiClientTests: XCTestCase {
+class StationListTests: XCTestCase {
     
     func testCanHandleStationsError() {
         

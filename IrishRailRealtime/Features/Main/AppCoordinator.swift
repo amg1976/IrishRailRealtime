@@ -35,42 +35,47 @@ class AppCoordinator {
     /// - parameter window: The window where the app will be presented.
     init(onWindow window: UIWindow) {
         self.window = window
-        setupAppearance()
     }
     
     /// Starting point for the app flow, makes the window visible and shows the initial view controller.
     func start() {
-        showListViewController()
+        showStationListViewController()
         
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         
     }
     
-    // MARK: - Private methods
+}
+
+private typealias PrivateApi = AppCoordinator
+private extension PrivateApi {
     
-    private func setupAppearance() {
-        // TBD
-    }
-    
-    private func showListViewController() {
-        let listViewController = StationListViewController.instance
-        listViewController.flowDelegate = self
-        listViewController.services = services
+    func showStationListViewController() {
+        let stationListViewController = StationListViewController.instance
+        stationListViewController.flowDelegate = self
+        stationListViewController.services = services
         
-        if navigationController.childViewControllers.isEmpty {
-            navigationController.addChildViewController(listViewController)
-        } else {
-            navigationController.pushViewController(listViewController, animated: true)
-        }
+        navigationController.addChildViewController(stationListViewController)
     }
     
+    func showStationDataViewController(forStationCode stationCode: String) {
+        let stationDataViewController = StationDataViewController.instance
+        stationDataViewController.flowDelegate = self
+        stationDataViewController.services = services
+        stationDataViewController.stationCode = stationCode
+        
+        navigationController.pushViewController(stationDataViewController, animated: true)
+    }
+
 }
 
 extension AppCoordinator: StationListViewControllerFlowDelegate {
     
     func didSelectStation(_ stationCode: String) {
-        fatalError()
+        showStationDataViewController(forStationCode: stationCode)
     }
     
 }
+
+extension AppCoordinator: StationDataViewControllerFlowDelegate { }

@@ -75,11 +75,12 @@ extension StationListViewController: UITableViewDataSource, UITableViewDelegate 
     
 }
 
-typealias PrivateApi = StationListViewController
+private typealias PrivateApi = StationListViewController
 private extension PrivateApi {
     
     func setup() {
         tableView.dataSource = self
+        tableView.delegate = self
         tableView.register(StationListCell.self, forCellReuseIdentifier: StationListCell.reuseIdentifier)
     }
     
