@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfObjStation
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns="http://api.irishrail.ie/realtime/">
+    <objStation>
+        <StationDesc1>Belfast Central</StationDesc1>
+    </objStation>
+</ArrayOfObjStation>

@@ -8,12 +8,18 @@
 
 import UIKit
 
-class StationDataCell: UITableViewCell {
-
-    static let reuseIdentifier: String = String(describing: self)
+class StationDataCell: UITableViewCell, ConfigurableCell {
+    static var identifier: String {
+        return String(describing: self)
+    }
     
-    func configure(withStationData stationData: StationDataViewModel) {
-        self.textLabel?.text = stationData.dueIn
+    @IBOutlet private weak var routeLabel: UILabel!
+    @IBOutlet private weak var dueInLabel: UILabel!
+
+    func configure(withViewModel viewModel: ListItemViewModelRepresentable) {
+        guard let stationData = viewModel as? StationDataViewModel else { return }
+        self.routeLabel?.text = stationData.route
+        self.dueInLabel?.text = stationData.dueIn
     }
 
 }

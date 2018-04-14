@@ -8,8 +8,6 @@
 
 import UIKit
 
-protocol ListViewControllerFlowDelegate: class { }
-
 protocol ListItemViewModelRepresentable { }
 
 protocol ListViewModelRepresentable: class {
@@ -24,11 +22,11 @@ protocol ConfigurableCell: class {
 }
 
 class ListViewController<ViewModel: ListViewModelRepresentable,
-    FlowDelegate: ListViewControllerFlowDelegate,
     CellType: ConfigurableCell>: UIViewController, UITableViewDataSource, UITableViewDelegate, FlowController where CellType: UITableViewCell {
     
-    @IBOutlet private weak var tableView: UITableView!
-    private var listViewModel: ListViewModelRepresentable!
+    @IBOutlet private (set) weak var tableView: UITableView!
+    
+    private (set) var listViewModel: ListViewModelRepresentable!
     
     weak var services: Services! {
         didSet {
@@ -36,7 +34,6 @@ class ListViewController<ViewModel: ListViewModelRepresentable,
             self.listViewModel = ViewModel(withApiClient: services.apiClient)
         }
     }
-    weak var flowDelegate: FlowDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +49,14 @@ class ListViewController<ViewModel: ListViewModelRepresentable,
     
     func reload() {
         fatalError("Should be overrided by implementing class")
+    }
+    
+    func show(_ error: Error) {
+        let alertController = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
+            self.dismiss(animated: true, completion: nil)
+        }))
+        present(alertController, animated: true, completion: nil)
     }
 
     // MARK: - Table Datasource
@@ -73,6 +78,12 @@ class ListViewController<ViewModel: ListViewModelRepresentable,
         return cell
         
     }
+
+    // MARK: - Table Delegate
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        fatalError("Should be overrided by implementing class")
+    }
     
 }
 
@@ -82,15 +93,7 @@ private extension PrivateApi {
     func setup() {
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(CellType.self, forCellReuseIdentifier: CellType.identifier)
-    }
-    
-    func show(_ error: Error) {
-        let alertController = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
-            self.dismiss(animated: true, completion: nil)
-        }))
-        present(alertController, animated: true, completion: nil)
+        tableView.rowHeight = UITableViewAutomaticDimension
     }
     
 }

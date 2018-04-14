@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfObjStationData
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns="http://api.irishrail.ie/realtime/">
+    <objStationData>
+        <Servertime>2018-04-14T15:55:24.117</Servertime>
+        <Traincode>D924 </Traincode>
+        <Stationfullname>Broombridge</Stationfullname>
+        <Stationcode>BBRDG</Stationcode>
+        <Querytime>15:55:24</Querytime>
+        <Traindate>14 Apr 2018</Traindate>
+        <Origin>Dublin Pearse</Origin>
+        <Destination>Maynooth</Destination>
+        <Origintime>16:45</Origintime>
+        <Destinationtime>17:33</Destinationtime>
+        <Status>No Information</Status>
+        <Lastlocation />
+        <Duein>66</Duein>
+        <Late>0</Late>
+        <Exparrival>17:01</Exparrival>
+        <Expdepart>17:01</Expdepart>
+        <Scharrival>17:01</Scharrival>
+        <Schdepart>17:01</Schdepart>
+        <Direction>Northbound</Direction>
+        <Traintype>Train</Traintype>
+        <Locationtype>S</Locationtype>
+    </objStationData>
+    <objStationData>
+        <Servertime>2018-04-14T15:55:24.117</Servertime>
+        <Traincode>P670 </Traincode>
+        <Stationfullname>Broombridge</Stationfullname>
+        <Stationcode>BBRDG</Stationcode>
+        <Querytime>15:55:24</Querytime>
+        <Traindate>14 Apr 2018</Traindate>
+        <Origin>Maynooth</Origin>
+        <Destination>Dublin Pearse</Destination>
+        <Origintime>15:46</Origintime>
+        <Destinationtime>16:39</Destinationtime>
+        <Status>En Route</Status>
+        <Lastlocation>Arrived Leixlip (Louisa Bridge)</Lastlocation>
+        <Duein>22</Duein>
+        <Late>0</Late>
+        <Exparrival>16:17</Exparrival>
+        <Expdepart>16:17</Expdepart>
+        <Scharrival>16:16</Scharrival>
+        <Schdepart>16:17</Schdepart>
+        <Direction>Southbound</Direction>
+        <Traintype>Train</Traintype>
+        <Locationtype>S</Locationtype>
+    </objStationData>
+    <objStationData>
+        <Servertime>2018-04-14T15:55:24.117</Servertime>
+        <Traincode>P672 </Traincode>
+        <Stationfullname>Broombridge</Stationfullname>
+        <Stationcode>BBRDG</Stationcode>
+        <Querytime>15:55:24</Querytime>
+        <Traindate>14 Apr 2018</Traindate>
+        <Origin>Maynooth</Origin>
+        <Destination>Dublin Pearse</Destination>
+        <Origintime>16:40</Origintime>
+        <Destinationtime>17:26</Destinationtime>
+        <Status>No Information</Status>
+        <Lastlocation />
+        <Duein>76</Duein>
+        <Late>0</Late>
+        <Exparrival>17:10</Exparrival>
+        <Expdepart>17:11</Expdepart>
+        <Scharrival>17:10</Scharrival>
+        <Schdepart>17:11</Schdepart>
+        <Direction>Southbound</Direction>
+        <Traintype>Train</Traintype>
+        <Locationtype>S</Locationtype>
+    </objStationData>
+</ArrayOfObjStationData>

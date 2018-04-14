@@ -8,16 +8,14 @@
 
 import Foundation
 
-struct StationDataViewModel {
+struct StationDataViewModel: ListItemViewModelRepresentable {
     
-    let origin: String
-    let destination: String
+    let route: String
     let dueIn: String
     
     init(withModel stationData: StationData) {
-        self.origin = stationData.origin
-        self.destination = stationData.destination
-        self.dueIn = "\(stationData.dueIn)"
+        self.route = "\(stationData.origin) > \(stationData.destination)"
+        self.dueIn = "in \(stationData.dueIn) minutes"
     }
 
 }
@@ -26,7 +24,7 @@ enum StationDataListViewModelError: Error {
     case invalidIndexPath
 }
 
-class StationDataListViewModel {
+class StationDataListViewModel: ListViewModelRepresentable {
 
     private let apiClient: ApiClient
     private var stationData: [StationDataViewModel] = []
@@ -35,7 +33,7 @@ class StationDataListViewModel {
         return stationData.count
     }
 
-    init(withApiClient apiClient: ApiClient = ApiClient()) {
+    required init(withApiClient apiClient: ApiClient = ApiClient()) {
         self.apiClient = apiClient
     }
 
@@ -57,7 +55,7 @@ class StationDataListViewModel {
         })
     }
     
-    func viewModel(atIndexPath indexPath: IndexPath) throws -> StationDataViewModel {
+    func viewModel(atIndexPath indexPath: IndexPath) throws -> ListItemViewModelRepresentable {
         
         guard 0..<count ~= indexPath.row else {
             throw StationDataListViewModelError.invalidIndexPath

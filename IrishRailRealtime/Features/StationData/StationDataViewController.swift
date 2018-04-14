@@ -10,19 +10,17 @@ import UIKit
 
 protocol StationDataViewControllerFlowDelegate: class { }
 
-class StationDataViewController: UIViewController, FlowController {
-    
-    @IBOutlet private weak var tableView: UITableView!
-    private var stationDataListViewModel: StationDataListViewModel!
-    
-    weak var services: Services! {
-        didSet {
-            guard services != nil else { fatalError("Services can't be nil") }
-            self.stationDataListViewModel = StationDataListViewModel(withApiClient: services.apiClient)
-        }
-    }
-    weak var flowDelegate: StationDataViewControllerFlowDelegate?
+class StationDataViewController: ListViewController<StationDataListViewModel, StationDataCell> {
+   
     var stationCode: String!
+    weak var flowDelegate: StationDataViewControllerFlowDelegate?
+    
+    override func viewDidLoad() {
+        guard stationCode != nil else {
+            fatalError("Missing dependencies")
+        }
+        super.viewDidLoad()
+    }
     
     static var instance: StationDataViewController {
         guard let controller = UIStoryboard(name: "Main", bundle: nil)
@@ -31,53 +29,10 @@ class StationDataViewController: UIViewController, FlowController {
         }
         return controller
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        guard services != nil,
-            stationDataListViewModel != nil,
-            stationCode != nil else {
-                fatalError("Missing dependencies")
-        }
-        
-        setup()
-        reload()
-    }
-    
-}
 
-extension StationDataViewController: UITableViewDataSource, UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return stationDataListViewModel.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func reload() {
+        guard let stationDataListViewModel = listViewModel as? StationDataListViewModel else { return }
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: StationDataCell.reuseIdentifier, for: indexPath) as? StationDataCell else {
-            fatalError("Configuration error")
-        }
-        
-        if let stationData = try? stationDataListViewModel.viewModel(atIndexPath: indexPath) {
-            cell.configure(withStationData: stationData)
-        }
-        
-        return cell
-        
-    }
-    
-}
-
-private typealias PrivateApi = StationDataViewController
-private extension PrivateApi {
-    
-    func setup() {
-        tableView.dataSource = self
-        tableView.register(StationDataCell.self, forCellReuseIdentifier: StationDataCell.reuseIdentifier)
-    }
-    
-    func reload() {
         stationDataListViewModel.loadStationData(withCode: stationCode) { result in
             
             switch result {
@@ -95,14 +50,6 @@ private extension PrivateApi {
                 
             }
         }
-    }
-    
-    func show(_ error: Error) {
-        let alertController = UIAlertController(title: "Error loading station data", message: error.localizedDescription, preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
-            self.dismiss(animated: true, completion: nil)
-        }))
-        present(alertController, animated: true, completion: nil)
     }
     
 }

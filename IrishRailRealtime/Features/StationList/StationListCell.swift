@@ -8,11 +8,15 @@
 
 import UIKit
 
-class StationListCell: UITableViewCell {
-
-    static let reuseIdentifier: String = String(describing: self)
+class StationListCell: UITableViewCell, ConfigurableCell {
+    @IBOutlet private weak var descriptionLabel: UILabel!
+    @IBOutlet private weak var codeLabel: UILabel!
     
-    func configure(withStation station: StationViewModel) {
-        self.textLabel?.text = station.name
+    static var identifier: String {return String(describing: self) }
+    
+    func configure(withViewModel viewModel: ListItemViewModelRepresentable) {
+        guard let station = viewModel as? StationViewModel else { return }
+        self.descriptionLabel?.text = station.name
+        self.codeLabel?.text = station.code
     }
 }
