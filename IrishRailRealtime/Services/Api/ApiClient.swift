@@ -9,11 +9,6 @@
 import Foundation
 import SWXMLHash
 
-enum Result<Element> {
-    case succeeded(Element)
-    case failed(Error)
-}
-
 struct ApiClient {
     
     private let networkClient: NetworkClientRepresentable

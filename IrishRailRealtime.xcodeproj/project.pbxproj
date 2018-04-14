@@ -9,13 +9,21 @@
 /* Begin PBXBuildFile section */
 		06E785A4CA9195A9010BCCD3 /* Pods_IrishRailRealtime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6130CF1CF9A5457A9A2315F9 /* Pods_IrishRailRealtime.framework */; };
 		093541303392F171004A49D2 /* Pods_IrishRailRealtimeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA1E34D2939064B5478DA267 /* Pods_IrishRailRealtimeTests.framework */; };
+		207E222B20821F000043F659 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E222A20821F000043F659 /* AppCoordinator.swift */; };
+		207E222C20821F000043F659 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E222A20821F000043F659 /* AppCoordinator.swift */; };
+		207E222F208224B50043F659 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E222E208224B50043F659 /* Result.swift */; };
+		207E2230208224B50043F659 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E222E208224B50043F659 /* Result.swift */; };
+		207E22322082482D0043F659 /* StationListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E22312082482D0043F659 /* StationListCell.swift */; };
+		207E22332082482D0043F659 /* StationListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E22312082482D0043F659 /* StationListCell.swift */; };
+		208C95FC20821DB1003EE1BE /* StationListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208C95FB20821DB1003EE1BE /* StationListViewModel.swift */; };
+		208C95FD20821DB1003EE1BE /* StationListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208C95FB20821DB1003EE1BE /* StationListViewModel.swift */; };
 		20A9B95A2080072400A95167 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A9B9592080072400A95167 /* ApiClient.swift */; };
 		20A9B95B2080072400A95167 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A9B9592080072400A95167 /* ApiClient.swift */; };
 		20A9B95F2080083C00A95167 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A9B95E2080083C00A95167 /* Station.swift */; };
 		20A9B9602080083C00A95167 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A9B95E2080083C00A95167 /* Station.swift */; };
 		20A9B9622080096D00A95167 /* ApiClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A9B9612080096D00A95167 /* ApiClientTests.swift */; };
 		20E3574D207FDEDF0038AE02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E3574C207FDEDF0038AE02 /* AppDelegate.swift */; };
-		20E3574F207FDEDF0038AE02 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E3574E207FDEDF0038AE02 /* ViewController.swift */; };
+		20E3574F207FDEDF0038AE02 /* StationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E3574E207FDEDF0038AE02 /* StationListViewController.swift */; };
 		20E35752207FDEDF0038AE02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20E35750207FDEDF0038AE02 /* Main.storyboard */; };
 		20E35754207FDEE00038AE02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20E35753207FDEE00038AE02 /* Assets.xcassets */; };
 		20E35757207FDEE00038AE02 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20E35755207FDEE00038AE02 /* LaunchScreen.storyboard */; };
@@ -35,12 +43,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		207E222A20821F000043F659 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		207E222E208224B50043F659 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		207E22312082482D0043F659 /* StationListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationListCell.swift; sourceTree = "<group>"; };
+		208C95FB20821DB1003EE1BE /* StationListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationListViewModel.swift; sourceTree = "<group>"; };
 		20A9B9592080072400A95167 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		20A9B95E2080083C00A95167 /* Station.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
 		20A9B9612080096D00A95167 /* ApiClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClientTests.swift; sourceTree = "<group>"; };
 		20E35749207FDEDF0038AE02 /* IrishRailRealtime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IrishRailRealtime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20E3574C207FDEDF0038AE02 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		20E3574E207FDEDF0038AE02 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		20E3574E207FDEDF0038AE02 /* StationListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationListViewController.swift; sourceTree = "<group>"; };
 		20E35751207FDEDF0038AE02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		20E35753207FDEE00038AE02 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		20E35756207FDEE00038AE02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -88,6 +100,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		207E222D208224A90043F659 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				207E222E208224B50043F659 /* Result.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		20A9B9582080071100A95167 /* Api */ = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +150,7 @@
 				20E3576D207FDFD60038AE02 /* Features */,
 				20A9B95C2080082600A95167 /* Models */,
 				20E35771207FE10B0038AE02 /* Services */,
+				207E222D208224A90043F659 /* Utilities */,
 				20E3576F207FE0110038AE02 /* Assets */,
 				20E3576C207FDF9F0038AE02 /* Supporting files */,
 			);
@@ -167,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				20E3574C207FDEDF0038AE02 /* AppDelegate.swift */,
+				207E222A20821F000043F659 /* AppCoordinator.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -184,7 +206,9 @@
 		20E35770207FE0870038AE02 /* StationList */ = {
 			isa = PBXGroup;
 			children = (
-				20E3574E207FDEDF0038AE02 /* ViewController.swift */,
+				20E3574E207FDEDF0038AE02 /* StationListViewController.swift */,
+				208C95FB20821DB1003EE1BE /* StationListViewModel.swift */,
+				207E22312082482D0043F659 /* StationListCell.swift */,
 			);
 			path = StationList;
 			sourceTree = "<group>";
@@ -426,10 +450,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				20A9B95F2080083C00A95167 /* Station.swift in Sources */,
-				20E3574F207FDEDF0038AE02 /* ViewController.swift in Sources */,
+				20E3574F207FDEDF0038AE02 /* StationListViewController.swift in Sources */,
 				20E3574D207FDEDF0038AE02 /* AppDelegate.swift in Sources */,
+				208C95FC20821DB1003EE1BE /* StationListViewModel.swift in Sources */,
 				20E35774207FE12F0038AE02 /* NetworkClient.swift in Sources */,
 				20A9B95A2080072400A95167 /* ApiClient.swift in Sources */,
+				207E222F208224B50043F659 /* Result.swift in Sources */,
+				207E22322082482D0043F659 /* StationListCell.swift in Sources */,
+				207E222B20821F000043F659 /* AppCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,8 +468,12 @@
 				20A9B9622080096D00A95167 /* ApiClientTests.swift in Sources */,
 				20E35762207FDEE00038AE02 /* NetworkClientTests.swift in Sources */,
 				20A9B9602080083C00A95167 /* Station.swift in Sources */,
+				208C95FD20821DB1003EE1BE /* StationListViewModel.swift in Sources */,
 				20E35775207FE12F0038AE02 /* NetworkClient.swift in Sources */,
 				20A9B95B2080072400A95167 /* ApiClient.swift in Sources */,
+				207E2230208224B50043F659 /* Result.swift in Sources */,
+				207E22332082482D0043F659 /* StationListCell.swift in Sources */,
+				207E222C20821F000043F659 /* AppCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -597,7 +629,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M65H29N762;
 				INFOPLIST_FILE = "$(SRCROOT)/IrishRailRealtime/Supporting files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.amg.IrishRailRealtime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_TREAT_WARNINGS_AS_ERRORS = YES;
@@ -614,7 +649,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M65H29N762;
 				INFOPLIST_FILE = "$(SRCROOT)/IrishRailRealtime/Supporting files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.amg.IrishRailRealtime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_TREAT_WARNINGS_AS_ERRORS = YES;
@@ -631,7 +669,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M65H29N762;
 				INFOPLIST_FILE = IrishRailRealtimeTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.amg.IrishRailRealtimeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -648,7 +690,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M65H29N762;
 				INFOPLIST_FILE = IrishRailRealtimeTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.amg.IrishRailRealtimeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
