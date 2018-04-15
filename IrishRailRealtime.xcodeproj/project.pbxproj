@@ -73,7 +73,6 @@
 		207E22312082482D0043F659 /* StationListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationListCell.swift; sourceTree = "<group>"; };
 		207E223820824D1D0043F659 /* StationDataListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationDataListViewModel.swift; sourceTree = "<group>"; };
 		207E223B20824E380043F659 /* StationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationData.swift; sourceTree = "<group>"; };
-		207E223E208250DA0043F659 /* _StationDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _StationDataViewController.swift; sourceTree = "<group>"; };
 		208C95FB20821DB1003EE1BE /* StationListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationListViewModel.swift; sourceTree = "<group>"; };
 		20A3D28D208257120066BCE1 /* StationDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationDataCell.swift; sourceTree = "<group>"; };
 		20A3D29020825A040066BCE1 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
@@ -84,7 +83,6 @@
 		20A9B9612080096D00A95167 /* StationListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationListTests.swift; sourceTree = "<group>"; };
 		20E35749207FDEDF0038AE02 /* IrishRailRealtime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IrishRailRealtime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20E3574C207FDEDF0038AE02 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		20E3574E207FDEDF0038AE02 /* _StationListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _StationListViewController.swift; sourceTree = "<group>"; };
 		20E35751207FDEDF0038AE02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		20E35753207FDEE00038AE02 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		20E35756207FDEE00038AE02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -144,7 +142,6 @@
 		207E223420824CB70043F659 /* StationData */ = {
 			isa = PBXGroup;
 			children = (
-				207E223E208250DA0043F659 /* _StationDataViewController.swift */,
 				20A3D299208265A60066BCE1 /* StationDataViewController.swift */,
 				207E223820824D1D0043F659 /* StationDataListViewModel.swift */,
 				20A3D28D208257120066BCE1 /* StationDataCell.swift */,
@@ -259,7 +256,6 @@
 		20E35770207FE0870038AE02 /* StationList */ = {
 			isa = PBXGroup;
 			children = (
-				20E3574E207FDEDF0038AE02 /* _StationListViewController.swift */,
 				20A3D29620825F8C0066BCE1 /* StationListViewController.swift */,
 				208C95FB20821DB1003EE1BE /* StationListViewModel.swift */,
 				207E22312082482D0043F659 /* StationListCell.swift */,
