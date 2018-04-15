@@ -36,8 +36,12 @@ struct ApiClient {
             let xmlObject = SWXMLHash.parse(data)
             
             do {
-                let stationList: StationList = try xmlObject["ArrayOfObjStation"]["objStation"].value()
-                completion(Result.succeeded(stationList))
+                if xmlObject["ArrayOfObjStation"].children.count > 0 {
+                    let stationList: StationList = try xmlObject["ArrayOfObjStation"]["objStation"].value()
+                    completion(Result.succeeded(stationList))
+                } else {
+                    completion(Result.succeeded(StationList()))
+                }
             } catch let parseError {
                 completion(Result.failed(parseError))
             }
@@ -65,8 +69,13 @@ struct ApiClient {
             let xmlObject = SWXMLHash.parse(data)
             
             do {
-                let stationDataList: StationDataList = try xmlObject["ArrayOfObjStationData"]["objStationData"].value()
-                completion(Result.succeeded(stationDataList))
+                if xmlObject["ArrayOfObjStationData"].children.count > 0 {
+                    let stationDataList: StationDataList = try xmlObject["ArrayOfObjStationData"]["objStationData"].value()
+                    completion(Result.succeeded(stationDataList))
+                } else {
+                    completion(Result.succeeded(StationDataList()))
+                }
+                
             } catch let parseError {
                 completion(Result.failed(parseError))
             }

@@ -49,7 +49,7 @@ class ListViewController<ViewModel: ListViewModelRepresentable,
     
     @objc
     func reload() {
-        fatalError("Should be overrided by implementing class")
+        fatalError("Should be overrided by subclass")
     }
     
     func show(_ error: Error) {
@@ -83,7 +83,7 @@ class ListViewController<ViewModel: ListViewModelRepresentable,
     // MARK: - Table Delegate
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        fatalError("Should be overrided by implementing class")
+        fatalError("Should be overrided by subclass")
     }
     
 }
