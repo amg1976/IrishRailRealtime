@@ -14,7 +14,7 @@ class ListViewController<ViewModel: ListViewModelRepresentable,
 - SWXMLHash - swift XML parser, to parse the responses from the API
 - Nimble - a matcher framework, for easier to write and read unit tests
 
-The dependencies are managed with Cocoapods, so before compiling the project, please run `pod install`
+The dependencies are managed with Cocoapods (v1.5.0), so before compiling the project, please run `pod install`
 
 #### Todo
 - Favorite stations
