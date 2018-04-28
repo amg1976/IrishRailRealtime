@@ -24,14 +24,6 @@ class StationDataViewController: ListViewController<StationDataListViewModel, St
         self.navigationItem.title = station.name
     }
     
-    static var instance: StationDataViewController {
-        guard let controller = UIStoryboard(name: "Main", bundle: nil)
-            .instantiateViewController(withIdentifier: "StationDataViewController") as? StationDataViewController else {
-                fatalError("Storyboard not properly configured")
-        }
-        return controller
-    }
-
     override func reload() {
         guard let stationDataListViewModel = listViewModel as? StationDataListViewModel else { return }
         
@@ -54,4 +46,16 @@ class StationDataViewController: ListViewController<StationDataListViewModel, St
         }
     }
     
+}
+
+extension StationDataViewController {
+    
+    static func createInstance() -> StationDataViewController {
+        guard let controller = UIStoryboard(name: "Main", bundle: nil)
+            .instantiateViewController(withIdentifier: "StationDataViewController") as? StationDataViewController else {
+                fatalError("Storyboard not properly configured")
+        }
+        return controller
+    }
+
 }

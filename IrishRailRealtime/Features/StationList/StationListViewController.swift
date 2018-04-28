@@ -18,14 +18,6 @@ class StationListViewController: ListViewController<StationListViewModel, Statio
 
     weak var flowDelegate: StationListViewControllerFlowDelegate?
     
-    static var instance: StationListViewController {
-        guard let controller = UIStoryboard(name: "Main", bundle: nil)
-            .instantiateViewController(withIdentifier: "StationListViewController") as? StationListViewController else {
-                fatalError("Storyboard not properly configured")
-        }
-        return controller
-    }
-
     override func reload() {
         
         guard let stationListViewModel = listViewModel as? StationListViewModel else { return }
@@ -50,9 +42,21 @@ class StationListViewController: ListViewController<StationListViewModel, Statio
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let station = try? listViewModel.viewModel(atIndexPath: indexPath) as? StationViewModel {
-            flowDelegate?.didSelectStation(StationLink(station!.code, station!.name))
+        if let station = (try? listViewModel.viewModel(atIndexPath: indexPath)) as? StationViewModel {
+            flowDelegate?.didSelectStation(StationLink(station.code, station.name))
         }
     }
     
+}
+
+extension StationListViewController {
+    
+    static func createInstance() -> StationListViewController {
+        guard let controller = UIStoryboard(name: "Main", bundle: nil)
+            .instantiateViewController(withIdentifier: "StationListViewController") as? StationListViewController else {
+                fatalError("Storyboard not properly configured")
+        }
+        return controller
+    }
+
 }

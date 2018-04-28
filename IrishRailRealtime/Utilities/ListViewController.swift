@@ -22,7 +22,8 @@ protocol ConfigurableCell: class {
 }
 
 class ListViewController<ViewModel: ListViewModelRepresentable,
-    CellType: ConfigurableCell>: UIViewController, UITableViewDataSource, UITableViewDelegate, FlowController where CellType: UITableViewCell {
+    CellType: ConfigurableCell>: UIViewController, UITableViewDataSource, UITableViewDelegate, FlowController
+    where CellType: UITableViewCell {
     
     @IBOutlet private (set) weak var tableView: UITableView!
     
@@ -47,7 +48,6 @@ class ListViewController<ViewModel: ListViewModelRepresentable,
         reload()
     }
     
-    @objc
     func reload() {
         fatalError("Should be overrided by subclass")
     }

@@ -52,7 +52,7 @@ private typealias PrivateApi = AppCoordinator
 private extension PrivateApi {
     
     func showStationListViewController() {
-        let stationListViewController = StationListViewController.instance
+        let stationListViewController = StationListViewController.createInstance()
         stationListViewController.flowDelegate = self
         stationListViewController.services = services
         
@@ -60,7 +60,7 @@ private extension PrivateApi {
     }
     
     func showStationDataViewController(forStation station: StationLink) {
-        let stationDataViewController = StationDataViewController.instance
+        let stationDataViewController = StationDataViewController.createInstance()
         stationDataViewController.flowDelegate = self
         stationDataViewController.services = services
         stationDataViewController.station = station
