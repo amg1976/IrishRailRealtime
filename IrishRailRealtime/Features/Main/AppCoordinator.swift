@@ -28,6 +28,7 @@ class AppCoordinator {
     private weak var window: UIWindow!
     private let navigationController: UINavigationController = UINavigationController()
     private let services: Services = Services()
+    private var activeFlow: NavigationFlow?
     
     // MARK: - Public methods
     
@@ -39,40 +40,11 @@ class AppCoordinator {
     
     /// Starting point for the app flow, makes the window visible and shows the initial view controller.
     func start() {
-        showStationListViewController()
-        
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
-        
+
+        self.activeFlow = StationListFlow(withServices: services, navigationController: navigationController)
+        activeFlow?.begin()
     }
     
 }
-
-private typealias PrivateApi = AppCoordinator
-private extension PrivateApi {
-    
-    func showStationListViewController() {
-        let stationListViewController = StationListViewController.create(withServices: services, flowDelegate: self)
-        navigationController.addChildViewController(stationListViewController)
-    }
-    
-    func showStationDataViewController(forStation station: StationLink) {
-        let stationDataViewController = StationDataViewController.createInstance()
-        stationDataViewController.flowDelegate = self
-        stationDataViewController.services = services
-        stationDataViewController.station = station
-        
-        navigationController.pushViewController(stationDataViewController, animated: true)
-    }
-
-}
-
-extension AppCoordinator: StationListFlowDelegate {
-    
-    func selected(station: StationLink) {
-        showStationDataViewController(forStation: station)
-    }
-    
-}
-
-extension AppCoordinator: StationDataViewControllerFlowDelegate { }
