@@ -8,6 +8,7 @@
 
 import XCTest
 import Nimble
+@testable import IrishRailRealtime
 
 class StationDataTests: XCTestCase {
     

@@ -8,10 +8,6 @@
 
 import UIKit
 
-class Services {
-    let apiClient: ApiClient = ApiClient(withNetworkClient: SimpleNetworkClient())
-}
-
 /**
  Responsible for handling the navigation between the different screens,
  by setting itself as flow delegate for each view controller.
