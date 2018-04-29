@@ -8,10 +8,6 @@
 
 import UIKit
 
-protocol FlowController: class {
-    var services: Services! { get set }
-}
-
 class Services {
     let apiClient: ApiClient = ApiClient(withNetworkClient: SimpleNetworkClient())
 }

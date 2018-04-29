@@ -59,21 +59,4 @@ class NetworkClientTests: XCTestCase {
         
     }
     
-    func testCompletionBlockCalledWithData() {
-        
-        let validEndpoint: String = "https://api.irishrail.ie/realtime/realtime.asmx/getAllStationsXML"
-        
-        var receivedData: Data?
-        
-        waitUntil { done in
-            self.networkClient.request(url: validEndpoint) { (data, _) in
-                receivedData = data
-                done()
-            }
-        }
-        
-        expect(receivedData).notTo(beEmpty())
-
-    }
-    
 }
