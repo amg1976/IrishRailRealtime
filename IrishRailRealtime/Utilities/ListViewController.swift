@@ -21,8 +21,8 @@ protocol ConfigurableCell: class {
     func configure(withViewModel viewModel: ListItemViewModelRepresentable)
 }
 
-class ListViewController<ViewModel: ListViewModelRepresentable,
-    CellType: ConfigurableCell>: UIViewController, UITableViewDataSource, UITableViewDelegate, FlowController
+class ListViewController<ViewModel: ListViewModelRepresentable, CellType: ConfigurableCell>:
+    UIViewController, UITableViewDataSource, UITableViewDelegate, FlowController
     where CellType: UITableViewCell {
     
     @IBOutlet private (set) weak var tableView: UITableView!
@@ -52,14 +52,6 @@ class ListViewController<ViewModel: ListViewModelRepresentable,
         fatalError("Should be overrided by subclass")
     }
     
-    func show(_ error: Error) {
-        let alertController = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
-            self.dismiss(animated: true, completion: nil)
-        }))
-        present(alertController, animated: true, completion: nil)
-    }
-
     // MARK: - Table Datasource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

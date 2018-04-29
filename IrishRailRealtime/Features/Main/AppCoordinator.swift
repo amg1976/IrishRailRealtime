@@ -52,10 +52,7 @@ private typealias PrivateApi = AppCoordinator
 private extension PrivateApi {
     
     func showStationListViewController() {
-        let stationListViewController = StationListViewController.createInstance()
-        stationListViewController.flowDelegate = self
-        stationListViewController.services = services
-        
+        let stationListViewController = StationListViewController.create(withServices: services, flowDelegate: self)
         navigationController.addChildViewController(stationListViewController)
     }
     
@@ -70,9 +67,9 @@ private extension PrivateApi {
 
 }
 
-extension AppCoordinator: StationListViewControllerFlowDelegate {
+extension AppCoordinator: StationListFlowDelegate {
     
-    func didSelectStation(_ station: StationLink) {
+    func selected(station: StationLink) {
         showStationDataViewController(forStation: station)
     }
     

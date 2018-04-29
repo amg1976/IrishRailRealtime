@@ -16,6 +16,8 @@
 		204C50EB208283CA0059B1AE /* InvalidStationData.xml in Resources */ = {isa = PBXBuildFile; fileRef = 204C50EA208283CA0059B1AE /* InvalidStationData.xml */; };
 		204C50ED208286290059B1AE /* StationListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204C50EC208286290059B1AE /* StationListViewModelTests.swift */; };
 		204C50EF208289210059B1AE /* StationDataViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204C50EE208289210059B1AE /* StationDataViewModelTests.swift */; };
+		204C50F420951C850059B1AE /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204C50F320951C850059B1AE /* UIViewController+Extensions.swift */; };
+		204C50F620951E3A0059B1AE /* StationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204C50F520951E3A0059B1AE /* StationListViewController.swift */; };
 		207E222B20821F000043F659 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E222A20821F000043F659 /* AppCoordinator.swift */; };
 		207E222C20821F000043F659 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E222A20821F000043F659 /* AppCoordinator.swift */; };
 		207E222F208224B50043F659 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E222E208224B50043F659 /* Result.swift */; };
@@ -32,8 +34,6 @@
 		20A3D28F208257120066BCE1 /* StationDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A3D28D208257120066BCE1 /* StationDataCell.swift */; };
 		20A3D29120825A040066BCE1 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A3D29020825A040066BCE1 /* ListViewController.swift */; };
 		20A3D29220825A040066BCE1 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A3D29020825A040066BCE1 /* ListViewController.swift */; };
-		20A3D29720825F8C0066BCE1 /* StationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A3D29620825F8C0066BCE1 /* StationListViewController.swift */; };
-		20A3D29820825F8C0066BCE1 /* StationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A3D29620825F8C0066BCE1 /* StationListViewController.swift */; };
 		20A3D29A208265A60066BCE1 /* StationDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A3D299208265A60066BCE1 /* StationDataViewController.swift */; };
 		20A3D29B208265A60066BCE1 /* StationDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A3D299208265A60066BCE1 /* StationDataViewController.swift */; };
 		20A9B95A2080072400A95167 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A9B9592080072400A95167 /* ApiClient.swift */; };
@@ -68,6 +68,8 @@
 		204C50EA208283CA0059B1AE /* InvalidStationData.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = InvalidStationData.xml; sourceTree = "<group>"; };
 		204C50EC208286290059B1AE /* StationListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationListViewModelTests.swift; sourceTree = "<group>"; };
 		204C50EE208289210059B1AE /* StationDataViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationDataViewModelTests.swift; sourceTree = "<group>"; };
+		204C50F320951C850059B1AE /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		204C50F520951E3A0059B1AE /* StationListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationListViewController.swift; sourceTree = "<group>"; };
 		207E222A20821F000043F659 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		207E222E208224B50043F659 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		207E22312082482D0043F659 /* StationListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationListCell.swift; sourceTree = "<group>"; };
@@ -76,7 +78,6 @@
 		208C95FB20821DB1003EE1BE /* StationListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationListViewModel.swift; sourceTree = "<group>"; };
 		20A3D28D208257120066BCE1 /* StationDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationDataCell.swift; sourceTree = "<group>"; };
 		20A3D29020825A040066BCE1 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
-		20A3D29620825F8C0066BCE1 /* StationListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationListViewController.swift; sourceTree = "<group>"; };
 		20A3D299208265A60066BCE1 /* StationDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationDataViewController.swift; sourceTree = "<group>"; };
 		20A9B9592080072400A95167 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		20A9B95E2080083C00A95167 /* Station.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
@@ -128,6 +129,14 @@
 				6CC6101DF4BE7E5D0DC908B0 /* Pods-IrishRailRealtimeTests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		204C50F220951C6B0059B1AE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				204C50F320951C850059B1AE /* UIViewController+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		207E222D208224A90043F659 /* Utilities */ = {
@@ -189,6 +198,7 @@
 		20E3574B207FDEDF0038AE02 /* IrishRailRealtime */ = {
 			isa = PBXGroup;
 			children = (
+				204C50F220951C6B0059B1AE /* Extensions */,
 				20E3576D207FDFD60038AE02 /* Features */,
 				20A9B95C2080082600A95167 /* Models */,
 				20E35771207FE10B0038AE02 /* Services */,
@@ -256,7 +266,7 @@
 		20E35770207FE0870038AE02 /* StationList */ = {
 			isa = PBXGroup;
 			children = (
-				20A3D29620825F8C0066BCE1 /* StationListViewController.swift */,
+				204C50F520951E3A0059B1AE /* StationListViewController.swift */,
 				208C95FB20821DB1003EE1BE /* StationListViewModel.swift */,
 				207E22312082482D0043F659 /* StationListCell.swift */,
 			);
@@ -505,11 +515,12 @@
 			files = (
 				20A9B95F2080083C00A95167 /* Station.swift in Sources */,
 				20E3574D207FDEDF0038AE02 /* AppDelegate.swift in Sources */,
-				20A3D29720825F8C0066BCE1 /* StationListViewController.swift in Sources */,
 				208C95FC20821DB1003EE1BE /* StationListViewModel.swift in Sources */,
+				204C50F620951E3A0059B1AE /* StationListViewController.swift in Sources */,
 				207E223C20824E380043F659 /* StationData.swift in Sources */,
 				20A3D29120825A040066BCE1 /* ListViewController.swift in Sources */,
 				20E35774207FE12F0038AE02 /* NetworkClient.swift in Sources */,
+				204C50F420951C850059B1AE /* UIViewController+Extensions.swift in Sources */,
 				20A9B95A2080072400A95167 /* ApiClient.swift in Sources */,
 				207E222F208224B50043F659 /* Result.swift in Sources */,
 				207E223920824D1D0043F659 /* StationDataListViewModel.swift in Sources */,
@@ -538,7 +549,6 @@
 				20A3D29220825A040066BCE1 /* ListViewController.swift in Sources */,
 				20A3D28F208257120066BCE1 /* StationDataCell.swift in Sources */,
 				207E2230208224B50043F659 /* Result.swift in Sources */,
-				20A3D29820825F8C0066BCE1 /* StationListViewController.swift in Sources */,
 				207E223A20824D1D0043F659 /* StationDataListViewModel.swift in Sources */,
 				207E22332082482D0043F659 /* StationListCell.swift in Sources */,
 				207E222C20821F000043F659 /* AppCoordinator.swift in Sources */,
@@ -696,6 +706,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M65H29N762;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/IrishRailRealtime/Supporting files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -716,6 +727,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M65H29N762;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/IrishRailRealtime/Supporting files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
