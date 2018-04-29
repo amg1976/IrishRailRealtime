@@ -8,19 +8,6 @@
 
 import UIKit
 
-protocol ListItemViewModelRepresentable { }
-
-protocol ListViewModelRepresentable: class {
-    var count: Int { get }
-    init(withApiClient apiClient: ApiClient)
-    func viewModel(atIndexPath indexPath: IndexPath) throws -> ListItemViewModelRepresentable
-}
-
-protocol ConfigurableCell: class {
-    static var identifier: String { get }
-    func configure(withViewModel viewModel: ListItemViewModelRepresentable)
-}
-
 class ListViewController<ViewModel: ListViewModelRepresentable, CellType: ConfigurableCell>:
     UIViewController, UITableViewDataSource, UITableViewDelegate, FlowController
     where CellType: UITableViewCell {

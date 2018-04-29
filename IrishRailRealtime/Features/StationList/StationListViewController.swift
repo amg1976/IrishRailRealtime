@@ -1,5 +1,5 @@
 //
-//  StationList2ViewController.swift
+//  StationListViewController.swift
 //  IrishRailRealtime
 //
 //  Created by Adriano Goncalves on 28/04/2018.
@@ -7,83 +7,6 @@
 //
 
 import UIKit
-
-protocol TableController: UITableViewDataSource & UITableViewDelegate {
-    
-    associatedtype TableCell: ConfigurableCell
-    associatedtype ListViewModel: ListViewModelRepresentable
-    associatedtype ListItem: ListItemViewModelRepresentable
-    
-    var selectAction: ((ListItem) -> Void)? { get set }
-    init(withViewModel viewModel: ListViewModel)
-}
-
-protocol ListViewControllerRepresentable {
-    
-    associatedtype ViewModel: ListViewModelRepresentable
-    associatedtype Controller: TableController
-    
-    var tableView: UITableView! { get }
-    var tableController: Controller! { get }
-    var viewModel: ViewModel! { get }
-    var services: Services! { get }
-    
-    func reload()
-    func setup()
-}
-
-extension ListViewControllerRepresentable {
-    
-    func setup() {
-        tableView.dataSource = tableController
-        tableView.delegate = tableController
-        tableView.rowHeight = UITableViewAutomaticDimension
-    }
-    
-}
-
-class StationListTableController: NSObject, TableController {
-
-    typealias TableCell = StationListCell
-    typealias ListViewModel = StationListViewModel
-    typealias ListItem = StationViewModel
-    
-    private weak var viewModel: StationListViewModel!
-    
-    var selectAction: ((ListItem) -> Void)?
-    
-    required init(withViewModel viewModel: ListViewModel) {
-        self.viewModel = viewModel
-        super.init()
-    }
-    
-    // MARK: - UITableViewDataSource
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: TableCell.identifier, for: indexPath) as? TableCell else {
-            return UITableViewCell()
-        }
-        
-        if let itemViewModel = try? viewModel.viewModel(atIndexPath: indexPath) {
-            cell.configure(withViewModel: itemViewModel)
-        }
-        
-        return cell
-    }
-
-    // MARK: - UITableViewDelegate
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let item = (try? viewModel.viewModel(atIndexPath: indexPath)) as? StationViewModel else { return }
-        selectAction?(item)
-    }
-
-}
 
 typealias StationLink = (code: String, name: String)
 
@@ -132,12 +55,12 @@ class StationListViewController: UIViewController, ListViewControllerRepresentab
 
     // MARK: - UIViewController
     
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+
     override private init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
     
     override func viewDidLoad() {

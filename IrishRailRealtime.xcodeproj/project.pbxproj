@@ -18,6 +18,14 @@
 		204C50EF208289210059B1AE /* StationDataViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204C50EE208289210059B1AE /* StationDataViewModelTests.swift */; };
 		204C50F420951C850059B1AE /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204C50F320951C850059B1AE /* UIViewController+Extensions.swift */; };
 		204C50F620951E3A0059B1AE /* StationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204C50F520951E3A0059B1AE /* StationListViewController.swift */; };
+		204C50F92095DE760059B1AE /* TableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204C50F82095DE760059B1AE /* TableController.swift */; };
+		204C50FA2095DE760059B1AE /* TableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204C50F82095DE760059B1AE /* TableController.swift */; };
+		204C50FC2095DEAE0059B1AE /* ListViewControllerRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204C50FB2095DEAE0059B1AE /* ListViewControllerRepresentable.swift */; };
+		204C50FD2095DEAE0059B1AE /* ListViewControllerRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204C50FB2095DEAE0059B1AE /* ListViewControllerRepresentable.swift */; };
+		204C50FF2095DECE0059B1AE /* StationListTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204C50FE2095DECE0059B1AE /* StationListTableController.swift */; };
+		204C51002095DECE0059B1AE /* StationListTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204C50FE2095DECE0059B1AE /* StationListTableController.swift */; };
+		204C51012095DFD20059B1AE /* StationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204C50F520951E3A0059B1AE /* StationListViewController.swift */; };
+		204C51022095DFFD0059B1AE /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204C50F320951C850059B1AE /* UIViewController+Extensions.swift */; };
 		207E222B20821F000043F659 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E222A20821F000043F659 /* AppCoordinator.swift */; };
 		207E222C20821F000043F659 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E222A20821F000043F659 /* AppCoordinator.swift */; };
 		207E222F208224B50043F659 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E222E208224B50043F659 /* Result.swift */; };
@@ -70,6 +78,9 @@
 		204C50EE208289210059B1AE /* StationDataViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationDataViewModelTests.swift; sourceTree = "<group>"; };
 		204C50F320951C850059B1AE /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		204C50F520951E3A0059B1AE /* StationListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationListViewController.swift; sourceTree = "<group>"; };
+		204C50F82095DE760059B1AE /* TableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableController.swift; sourceTree = "<group>"; };
+		204C50FB2095DEAE0059B1AE /* ListViewControllerRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewControllerRepresentable.swift; sourceTree = "<group>"; };
+		204C50FE2095DECE0059B1AE /* StationListTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationListTableController.swift; sourceTree = "<group>"; };
 		207E222A20821F000043F659 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		207E222E208224B50043F659 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		207E22312082482D0043F659 /* StationListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationListCell.swift; sourceTree = "<group>"; };
@@ -139,6 +150,15 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		204C50F72095DE5E0059B1AE /* Generic List */ = {
+			isa = PBXGroup;
+			children = (
+				204C50F82095DE760059B1AE /* TableController.swift */,
+				204C50FB2095DEAE0059B1AE /* ListViewControllerRepresentable.swift */,
+			);
+			path = "Generic List";
+			sourceTree = "<group>";
+		};
 		207E222D208224A90043F659 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -198,6 +218,7 @@
 		20E3574B207FDEDF0038AE02 /* IrishRailRealtime */ = {
 			isa = PBXGroup;
 			children = (
+				204C50F72095DE5E0059B1AE /* Generic List */,
 				204C50F220951C6B0059B1AE /* Extensions */,
 				20E3576D207FDFD60038AE02 /* Features */,
 				20A9B95C2080082600A95167 /* Models */,
@@ -266,9 +287,10 @@
 		20E35770207FE0870038AE02 /* StationList */ = {
 			isa = PBXGroup;
 			children = (
+				207E22312082482D0043F659 /* StationListCell.swift */,
+				204C50FE2095DECE0059B1AE /* StationListTableController.swift */,
 				204C50F520951E3A0059B1AE /* StationListViewController.swift */,
 				208C95FB20821DB1003EE1BE /* StationListViewModel.swift */,
-				207E22312082482D0043F659 /* StationListCell.swift */,
 			);
 			path = StationList;
 			sourceTree = "<group>";
@@ -517,6 +539,7 @@
 				20E3574D207FDEDF0038AE02 /* AppDelegate.swift in Sources */,
 				208C95FC20821DB1003EE1BE /* StationListViewModel.swift in Sources */,
 				204C50F620951E3A0059B1AE /* StationListViewController.swift in Sources */,
+				204C50FF2095DECE0059B1AE /* StationListTableController.swift in Sources */,
 				207E223C20824E380043F659 /* StationData.swift in Sources */,
 				20A3D29120825A040066BCE1 /* ListViewController.swift in Sources */,
 				20E35774207FE12F0038AE02 /* NetworkClient.swift in Sources */,
@@ -525,6 +548,8 @@
 				207E222F208224B50043F659 /* Result.swift in Sources */,
 				207E223920824D1D0043F659 /* StationDataListViewModel.swift in Sources */,
 				207E22322082482D0043F659 /* StationListCell.swift in Sources */,
+				204C50F92095DE760059B1AE /* TableController.swift in Sources */,
+				204C50FC2095DEAE0059B1AE /* ListViewControllerRepresentable.swift in Sources */,
 				20A3D28E208257120066BCE1 /* StationDataCell.swift in Sources */,
 				207E222B20821F000043F659 /* AppCoordinator.swift in Sources */,
 				20A3D29A208265A60066BCE1 /* StationDataViewController.swift in Sources */,
@@ -541,14 +566,19 @@
 				20A9B9622080096D00A95167 /* StationListTests.swift in Sources */,
 				204C50ED208286290059B1AE /* StationListViewModelTests.swift in Sources */,
 				20E35762207FDEE00038AE02 /* NetworkClientTests.swift in Sources */,
+				204C51022095DFFD0059B1AE /* UIViewController+Extensions.swift in Sources */,
 				20A9B9602080083C00A95167 /* Station.swift in Sources */,
 				208C95FD20821DB1003EE1BE /* StationListViewModel.swift in Sources */,
 				207E223D20824E380043F659 /* StationData.swift in Sources */,
 				20E35775207FE12F0038AE02 /* NetworkClient.swift in Sources */,
 				20A9B95B2080072400A95167 /* ApiClient.swift in Sources */,
+				204C50FD2095DEAE0059B1AE /* ListViewControllerRepresentable.swift in Sources */,
 				20A3D29220825A040066BCE1 /* ListViewController.swift in Sources */,
+				204C50FA2095DE760059B1AE /* TableController.swift in Sources */,
+				204C51002095DECE0059B1AE /* StationListTableController.swift in Sources */,
 				20A3D28F208257120066BCE1 /* StationDataCell.swift in Sources */,
 				207E2230208224B50043F659 /* Result.swift in Sources */,
+				204C51012095DFD20059B1AE /* StationListViewController.swift in Sources */,
 				207E223A20824D1D0043F659 /* StationDataListViewModel.swift in Sources */,
 				207E22332082482D0043F659 /* StationListCell.swift in Sources */,
 				207E222C20821F000043F659 /* AppCoordinator.swift in Sources */,
