@@ -9,40 +9,31 @@
 import UIKit
 
 class StationListFlow: NavigationFlow {
-    
     private weak var services: Services!
-    private weak var navigationController: UINavigationController!
+    private weak var sourceController: UIViewController!
     
-    required init(withServices services: Services, navigationController: UINavigationController) {
+    private var stationItemFlow: StationItemFlow?
+
+    weak var navigationFlowDelegate: NavigationFlowDelegate?
+
+    required init(withServices services: Services, sourceController: UIViewController) {
         self.services = services
-        self.navigationController = navigationController
+        self.sourceController = sourceController
     }
     
     func begin() {
-        let stationListViewController = StationListViewController.create(withServices: services, flowDelegate: self)
-        navigationController.addChildViewController(stationListViewController)
+        let stationListViewController = StationListViewController.create(withServices: services, actionDelegate: self)
+        (sourceController as? UINavigationController)?.addChildViewController(stationListViewController)
+        navigationFlowDelegate?.didBecomeActive(self)
     }
 }
 
-private extension StationListFlow {
-    
-    func showStationDataViewController(forStation station: StationLink) {
-        let stationDataViewController = StationDataViewController.createInstance()
-        stationDataViewController.flowDelegate = self
-        stationDataViewController.services = services
-        stationDataViewController.station = station
-        
-        navigationController.pushViewController(stationDataViewController, animated: true)
-    }
-    
-}
-
-extension StationListFlow: StationListFlowDelegate {
+extension StationListFlow: StationListActionDelegate {
     
     func selected(station: StationLink) {
-        showStationDataViewController(forStation: station)
+        self.stationItemFlow = StationItemFlow(withServices: services, sourceController: sourceController)
+        stationItemFlow?.begin(withStation: station)
+        navigationFlowDelegate?.didBecomeInactive(self)
     }
     
 }
-
-extension StationListFlow: StationDataViewControllerFlowDelegate { }

@@ -28,7 +28,7 @@ class AppCoordinator {
     private weak var window: UIWindow!
     private let navigationController: UINavigationController = UINavigationController()
     private let services: Services = Services()
-    private var activeFlow: NavigationFlow?
+    private var initialFlow: NavigationFlow?
     
     // MARK: - Public methods
     
@@ -40,11 +40,12 @@ class AppCoordinator {
     
     /// Starting point for the app flow, makes the window visible and shows the initial view controller.
     func start() {
+        let flow = StationListFlow(withServices: services, sourceController: navigationController)
+        flow.begin()
+        self.initialFlow = flow
+
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
-
-        self.activeFlow = StationListFlow(withServices: services, navigationController: navigationController)
-        activeFlow?.begin()
     }
     
 }

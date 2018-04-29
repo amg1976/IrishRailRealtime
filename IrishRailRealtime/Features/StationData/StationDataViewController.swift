@@ -2,32 +2,69 @@
 //  StationDataViewController.swift
 //  IrishRailRealtime
 //
-//  Created by Adriano Goncalves on 14/04/2018.
+//  Created by Adriano Goncalves on 29/04/2018.
 //  Copyright © 2018 Adriano Goncalves. All rights reserved.
 //
 
 import UIKit
 
-protocol StationDataViewControllerFlowDelegate: class { }
+class StationDataViewController: UIViewController, ListViewControllerRepresentable {
 
-class StationDataViewController: ListViewController<StationDataListViewModel, StationDataCell> {
-   
-    var station: StationLink!
-    weak var flowDelegate: StationDataViewControllerFlowDelegate?
-    
-    override func viewDidLoad() {
-        guard station != nil else {
-            fatalError("Missing dependencies")
+    typealias ViewModel = StationDataListViewModel
+    typealias Controller = StationDataTableController
+
+    @IBOutlet private (set) weak var tableView: UITableView!
+
+    private (set) weak var services: Services! {
+        didSet {
+            viewModel = StationDataListViewModel(withApiClient: services.apiClient)
         }
-        super.viewDidLoad()
+    }
+
+    private (set) var viewModel: StationDataListViewModel! {
+        didSet {
+            tableController = StationDataTableController(withViewModel: viewModel)
+        }
+    }
+
+    private (set) var tableController: StationDataTableController!
+    
+    private var station: StationLink!
+
+    // MARK: - Factory method
+    
+    static func createInstance(withServices services: Services, station: StationLink) -> StationDataViewController {
+        guard let controller = UIStoryboard(name: "Main", bundle: nil)
+            .instantiateViewController(withIdentifier: "StationDataViewController") as? StationDataViewController else {
+                fatalError("Storyboard not properly configured")
+        }
         
-        self.navigationItem.title = station.name
+        controller.services = services
+        controller.station = station
+        
+        return controller
+    }
+
+    // MARK: - UIViewController
+    
+    override private init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
     
-    override func reload() {
-        guard let stationDataListViewModel = listViewModel as? StationDataListViewModel else { return }
-        
-        stationDataListViewModel.loadStationData(withCode: station.code) { result in
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setup()
+        reload()
+    }
+
+    // MARK: - ListViewControllerRepresentable
+    
+    func reload() {
+        viewModel.loadStationData(withCode: station.code) { result in
             
             switch result {
                 
@@ -44,18 +81,6 @@ class StationDataViewController: ListViewController<StationDataListViewModel, St
                 
             }
         }
-    }
-    
-}
-
-extension StationDataViewController {
-    
-    static func createInstance() -> StationDataViewController {
-        guard let controller = UIStoryboard(name: "Main", bundle: nil)
-            .instantiateViewController(withIdentifier: "StationDataViewController") as? StationDataViewController else {
-                fatalError("Storyboard not properly configured")
-        }
-        return controller
     }
 
 }

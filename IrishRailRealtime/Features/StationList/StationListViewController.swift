@@ -10,13 +10,13 @@ import UIKit
 
 typealias StationLink = (code: String, name: String)
 
-protocol StationListFlowDelegate: class {
+protocol StationListActionDelegate: class {
     func selected(station: StationLink)
 }
 
 class StationListViewController: UIViewController, ListViewControllerRepresentable {
 
-    private weak var flowDelegate: StationListFlowDelegate?
+    private weak var actionDelegate: StationListActionDelegate?
 
     @IBOutlet private (set) weak var tableView: UITableView!
 
@@ -33,7 +33,7 @@ class StationListViewController: UIViewController, ListViewControllerRepresentab
             let tableController = StationListTableController(withViewModel: viewModel)
             tableController.selectAction = { [unowned self] item in
                 let link = StationLink(code: item.code, name: item.name)
-                self.flowDelegate?.selected(station: link)
+                self.actionDelegate?.selected(station: link)
             }
             self.tableController = tableController
         }
@@ -41,14 +41,14 @@ class StationListViewController: UIViewController, ListViewControllerRepresentab
     
     // MARK: - Class factory
     
-    static func create(withServices services: Services, flowDelegate: StationListFlowDelegate) -> StationListViewController {
+    static func create(withServices services: Services, actionDelegate: StationListActionDelegate) -> StationListViewController {
         guard let controller = UIStoryboard(name: "Main", bundle: nil)
             .instantiateViewController(withIdentifier: "StationListViewController") as? StationListViewController else {
                 fatalError("Storyboard not properly configured")
         }
         
         controller.services = services
-        controller.flowDelegate = flowDelegate
+        controller.actionDelegate = actionDelegate
         
         return controller
     }

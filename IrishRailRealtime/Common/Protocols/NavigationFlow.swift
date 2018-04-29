@@ -8,7 +8,12 @@
 
 import UIKit
 
+protocol NavigationFlowDelegate: class {
+    func didBecomeActive(_ flow: NavigationFlow)
+    func didBecomeInactive(_ flow: NavigationFlow)
+}
+
 protocol NavigationFlow {
-    init(withServices services: Services, navigationController: UINavigationController)
-    func begin()
+    var navigationFlowDelegate: NavigationFlowDelegate? { get set }
+    init(withServices services: Services, sourceController: UIViewController)
 }
