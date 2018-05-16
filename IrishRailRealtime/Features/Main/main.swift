@@ -11,7 +11,7 @@ import UIKit
 
 let isRunningTests = NSClassFromString("XCTestCase") != nil
 let appDelegateClass: AnyClass? = isRunningTests ?
-    TestingAppDelegate.self :
+    NSClassFromString("IrishRailRealtimeTests.TestingAppDelegate") :
     NSClassFromString("IrishRailRealtime.AppDelegate")
 guard let finalDelegateClass = appDelegateClass else { exit(1) }
 

@@ -29,7 +29,6 @@
 		205815D1209650D10014B71D /* NavigationFlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205815D0209650D10014B71D /* NavigationFlowTests.swift */; };
 		205815D3209652570014B71D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20E35750207FDEDF0038AE02 /* Main.storyboard */; };
 		205815D6209657850014B71D /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205815D5209657850014B71D /* Services.swift */; };
-		205815D920965A980014B71D /* TestingAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205815D820965A980014B71D /* TestingAppDelegate.swift */; };
 		205815DA20965A980014B71D /* TestingAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205815D820965A980014B71D /* TestingAppDelegate.swift */; };
 		205815DC20965AB60014B71D /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205815DB20965AB60014B71D /* main.swift */; };
 		205815DD20965AB60014B71D /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205815DB20965AB60014B71D /* main.swift */; };
@@ -570,7 +569,6 @@
 				207E222F208224B50043F659 /* Result.swift in Sources */,
 				207E223920824D1D0043F659 /* StationDataListViewModel.swift in Sources */,
 				207E22322082482D0043F659 /* StationListCell.swift in Sources */,
-				205815D920965A980014B71D /* TestingAppDelegate.swift in Sources */,
 				204C50F92095DE760059B1AE /* TableController.swift in Sources */,
 				204C50FC2095DEAE0059B1AE /* ListViewControllerRepresentable.swift in Sources */,
 				20A3D28E208257120066BCE1 /* StationDataCell.swift in Sources */,
