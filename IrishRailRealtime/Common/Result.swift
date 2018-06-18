@@ -8,7 +8,9 @@
 
 import Foundation
 
+// swiftlint:disable identifier_name
 enum Result<Element> {
     case succeeded(Element)
     case failed(Error)
 }
+// swiftlint:enable identifier_name

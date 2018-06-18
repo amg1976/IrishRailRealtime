@@ -9,7 +9,7 @@ DEPENDENCIES:
   - SWXMLHash
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - Nimble
     - SwiftLint
     - SWXMLHash
@@ -21,4 +21,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 5d3404b87c95a3282bbe83a7c28549def2eb7465
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.5.2

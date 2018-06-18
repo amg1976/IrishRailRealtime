@@ -13,12 +13,14 @@ public enum HttpMethod: String {
     case post = "POST"
 }
 
+// swiftlint:disable identifier_name
 public enum NetworkClientError: Error {
     case invalidUrl
     case invalidResponseObject
     case invalidStatusCode(Int)
     case responseError(Error)
 }
+// swiftlint:enable identifier_name
 
 typealias NetworkRequestCompletionBlock = (Data?, Error?) -> Void
 
